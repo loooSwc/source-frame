@@ -8,7 +8,7 @@
     <artifactId>sframe-build</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>../sframe-web</module>
+        <module>../sframe-main</module>
         <module>../sframe-common</module>
         <module>../sframe-user</module>
     </modules>

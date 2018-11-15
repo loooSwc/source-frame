@@ -1,11 +1,11 @@
 <template>
-  <div id="wrapper">
-    <sf-menu></sf-menu>
-    <div id="page-wrapper" class="gray-bg dashbard-1">
-      <sf-header></sf-header>
-      <sf-footer></sf-footer>
-    </div>
-  </div>
+  <el-container>
+    <el-header>Header</el-header>
+    <el-container>
+      <el-aside width="200px">Aside</el-aside>
+      <el-main>Main</el-main>
+    </el-container>
+  </el-container>
 </template>
 
 <script>

@@ -1,30 +1,26 @@
 <template>
-  <div class="gray-bg">
-    <div class="middle-box text-center loginscreen  animated fadeInDown">
-      <div>
-        <div>
-
-          <h1 class="logo-name">H+</h1>
-
-        </div>
-        <h3>欢迎使用 H+</h3>
-
-        <div class="m-t" role="form">
-          <div class="form-group">
-            <input type="email" class="form-control" placeholder="用户名" required="">
-          </div>
-          <div class="form-group">
-            <input type="password" class="form-control" placeholder="密码" required="">
-          </div>
-          <button type="submit" class="btn btn-primary block full-width m-b" v-on:click="login()">登 录</button>
-
-
-          <p class="text-muted text-center"> <a href="login.html#"><small>忘记密码了？</small></a> | <a href="register.html">注册一个新账号</a>
-          </p>
-
-        </div>
-      </div>
-    </div>
+  <div class="login">
+    <el-form  label-width="0px"
+             class="demo-ruleForm middle-box text-center loginscreen login-form">
+      <h4>用户登陆</h4>
+      <el-form-item>
+        <el-input placeholder="请输入用户名" v-model="input3">
+          <template slot="prepend"><img src="../../assets/img/user.png" class="icon-img"></template>
+        </el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-input placeholder="请输入密码" type="password" v-model="input3">
+          <template slot="prepend"><img src="../../assets/img/password.png" class="icon-img"></template>
+        </el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="text" class="forget-password">忘记密码?</el-button>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" class="login-button" size="medium" @click="submitForm('ruleForm2')">提交</el-button>
+      </el-form-item>
+    </el-form>
   </div>
 </template>
 <script src="./login.js"></script>
+<style src="./login.css"></style>

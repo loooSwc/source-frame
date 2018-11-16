@@ -10,13 +10,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>sframe-user</artifactId>
+    <artifactId>sframe-user-interface</artifactId>
 
-    <name>sframe-user</name>
+    <name>sframe-user-interface</name>
+
     <dependencies>
         <dependency>
             <groupId>com.sframe</groupId>
-            <artifactId>sframe-user-interface</artifactId>
+            <artifactId>sframe-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

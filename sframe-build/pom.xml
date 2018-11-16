@@ -11,6 +11,7 @@
         <module>../sframe-main</module>
         <module>../sframe-common</module>
         <module>../sframe-user</module>
+        <module>../sframe-user-interface</module>
     </modules>
     <packaging>pom</packaging>
 

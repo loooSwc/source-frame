@@ -6,10 +6,10 @@ import router from './router/router'
 import 'element-ui/lib/theme-chalk/index.css';
 import Element from 'element-ui';
 import './style/style.css';
-import './assets/css/bootstrap.min.css'
 import axios from './axios/axios';
 
 Vue.use(Element, { size: 'small', zIndex: 3000 });
+
 
 Vue.config.productionTip = false;
 Vue.prototype.$axios = axios;

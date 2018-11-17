@@ -1,5 +1,7 @@
 package com.sframe.user.service.impl;
 
+import com.sframe.common.util.DesUtil;
+import com.sframe.common.util.MD5;
 import com.sframe.user.dao.UserDao;
 import com.sframe.user.model.BaseUser;
 import com.sframe.user.model.User;
@@ -19,14 +21,17 @@ public class LoginServiceImpl implements LoginService {
     @Autowired
     private UserDao userDao;
     @Override
-    public User login(String userAccount,String userPassword) throws Exception {
-        StringBuffer sb = new StringBuffer();
-        List<BaseUser> list = userDao.find("from BaseUser where userAccount=? and userPassword=?",userAccount,userPassword);
-        User user = new User();
-        if(CollectionUtils.isNotEmpty(list)){
-            BaseUser baseUser = list.get(0);
+    public User login(String userAccount,String userPassword,String key) throws Exception {
+        String password =  DesUtil.strDec(userPassword, key, null, null);
+        BaseUser baseUser = (BaseUser) userDao.findUnique("from BaseUser where userAccount=?",userAccount);
+        MD5 md5 = new MD5();
+        String salt = baseUser.getSalt();
+        String pass = md5.getMD5ofStr(password);
+        if (md5.getMD5ofStr(pass+salt).equals(baseUser.getUserPassword())) {
+            User user = new User();
             BeanUtils.copyProperties(user,baseUser);
+            return user;
         }
-        return user;
+        return null;
     }
 }

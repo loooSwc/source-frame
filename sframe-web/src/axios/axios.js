@@ -4,8 +4,9 @@
 // 引入axios以及element ui中的loading和message组件
 import axios from 'axios'
 import { Loading, Message } from 'element-ui'
+import router from '../router/router'
 // 超时时间
-axios.defaults.timeout = 5000
+axios.defaults.timeout = 50000
 // http请求拦截器
 var loadinginstace
 axios.interceptors.request.use(config => {
@@ -22,13 +23,30 @@ axios.interceptors.request.use(config => {
 // http响应拦截器
 axios.interceptors.response.use(data => {// 响应成功关闭loading
   loadinginstace.close();
-  return data
+  var error = {};
+  if(data.data.code == 100000){
+    this.router.push({path:'/login'});
+    error.code= 100000;
+    return Promise.reject(error)
+  }else if(data.data.code == 500000){
+    error.code= 500000;
+    Message.error({
+      message: '系统繁忙'
+    })
+    return Promise.reject(error)
+  }else if(data.data.code == 200000){
+    error.code= 200000;
+    error.msg = data.data.message;
+    return Promise.reject(error)
+  }else {
+    return data.data;
+  }
 }, error => {
   loadinginstace.close()
   Message.error({
     message: '系统繁忙'
   })
-  return Promise.reject(error)
+  return;
 })
 
 export default axios

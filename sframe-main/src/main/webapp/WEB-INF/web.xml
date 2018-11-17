@@ -81,13 +81,14 @@
   <!-- 验证码信息配置结束 -->
 
   <!--TODO 登路拦截器开始 -->
-  <!--<filter>
+  <filter>
     <filter-name>CheckSession</filter-name>
-    <filter-class>com.sframe.common.filter.CheckSessionFilter</filter-class>
+    <filter-class>com.sframe.common.filter.CheckAuthFilter</filter-class>
     <init-param>
       <param-name>unfilterurl</param-name>
       <param-value>
-        sys/login/login.do;
+        /user/login/login.do;
+        /user/login/getPassKey.do;
       </param-value>
     </init-param>
     <init-param>
@@ -98,7 +99,7 @@
   <filter-mapping>
     <filter-name>CheckSession</filter-name>
     <url-pattern>*.do</url-pattern>
-  </filter-mapping>-->
+  </filter-mapping>
 
   <!--登路拦截器结束-->
 

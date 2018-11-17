@@ -25,6 +25,8 @@ public class BaseUser implements java.io.Serializable {
 	private String userAccount;    //账号
 	@Column(name = "user_password")
 	private String userPassword;    //密码
+	@Column(name = "salt")
+	private String salt;            //密码盐
 
 	public String getUserId() {
 		return userId;
@@ -48,5 +50,13 @@ public class BaseUser implements java.io.Serializable {
 
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
+	}
+
+	public String getSalt() {
+		return salt;
+	}
+
+	public void setSalt(String salt) {
+		this.salt = salt;
 	}
 }

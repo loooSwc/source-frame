@@ -26,21 +26,19 @@ public class LoginController {
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     @ResponseBody
     public String findAuthorityList(HttpServletRequest request, HttpServletResponse response, @RequestBody Map map) throws Exception {
+        ResponseJSON responseJSON = new ResponseJSON();
         String userAccount = MapUtils.getString(map,"userAccount");
         String userPassword = MapUtils.getString(map,"userPassword");
         String key = (String) request.getSession().getAttribute(ConstantClazz.SYS_SESSION_PASSWORD);
-        User user = loginService.login(userAccount,userPassword,key);
-        if(user!= null){
-            SessionUserInfo sessionUserInfo = new SessionUserInfo();
-            sessionUserInfo.setUserId(user.getUserId());
-            sessionUserInfo.setUserAccount(user.getUserAccount());
+        SessionUserInfo sessionUserInfo = loginService.login(userAccount,userPassword,key);
+        if(sessionUserInfo!= null){
             request.getSession().setAttribute(ConstantClazz.USER_SESSION_INFO, sessionUserInfo);
-            Cookie userCookie = new Cookie("account", "%22" + user.getUserAccount() + "%22");
+            Cookie userCookie = new Cookie("account", "%22" + sessionUserInfo.getUserAccount() + "%22");
             userCookie.setPath("/");
             userCookie.setMaxAge(24 * 60 * 60 * 15);
             response.addCookie(userCookie);
         }
-        return JSONObject.toJSONString(user);
+        return JSONObject.toJSONString(responseJSON);
     }
 
     /**

@@ -17,7 +17,14 @@ export default new Router({
     },{
       path: '/home',
       name: 'home',
-      component: (resolve) => require(['../views/home/home.vue'], resolve)
+      component: (resolve) => require(['../views/home/home.vue'], resolve),
+      redirect: '/home/user/list',
+      children: [
+        {
+          path: 'user/list',
+          component: (resolve) => require(['../views/user/user-list.vue'], resolve)
+        }
+      ]
     }
   ]
 })

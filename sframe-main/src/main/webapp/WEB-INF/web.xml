@@ -48,6 +48,11 @@
       <param-name>forceEncoding</param-name>
       <param-value>true</param-value>
     </init-param>
+    <init-param>
+      <!--是否强制设置response的编码为encoding，建议设置为true，下面有关于这个参数的解释-->
+      <param-name>forceResponseEncoding</param-name>
+      <param-value>true</param-value>
+    </init-param>
   </filter>
   <filter-mapping>
     <filter-name>encodingFilter</filter-name>

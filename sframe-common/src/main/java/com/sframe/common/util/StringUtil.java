@@ -69,4 +69,18 @@ public class StringUtil {
         Pattern p = Pattern.compile(regex);
         return p.matcher(content).replaceAll("");
     }
+
+    /**
+     * 对象转化为字符串
+     * null直接返回null
+     * @Title: objToString
+     * @param obj
+     * @return
+     */
+    public static String objToString(Object obj) {
+        if(null == obj){
+            return null;
+        }
+        return String.valueOf(obj);
+    }
 }

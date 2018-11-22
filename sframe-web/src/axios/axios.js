@@ -7,6 +7,9 @@ import { Loading, Message } from 'element-ui'
 import router from '../router/router'
 // 超时时间
 axios.defaults.timeout = 50000
+axios.defaults.headers = {
+  "content-type": "application/json;charset=UTF-8"
+}
 // http请求拦截器
 var loadinginstace
 axios.interceptors.request.use(config => {
@@ -25,7 +28,7 @@ axios.interceptors.response.use(data => {// 响应成功关闭loading
   loadinginstace.close();
   var error = {};
   if(data.data.code == 100000){
-    this.router.push({path:'/login'});
+    router.push({path:'/login'});
     error.code= 100000;
     return Promise.reject(error)
   }else if(data.data.code == 500000){

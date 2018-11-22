@@ -7,12 +7,15 @@ import 'element-ui/lib/theme-chalk/index.css';
 import Element from 'element-ui';
 import './style/style.css';
 import axios from './axios/axios';
+import tablePage from './axios/service';
 
 Vue.use(Element, { size: 'small', zIndex: 3000 });
 
 
 Vue.config.productionTip = false;
 Vue.prototype.$axios = axios;
+Vue.prototype.$service = tablePage;
+
 
 /* eslint-disable no-new */
 new Vue({

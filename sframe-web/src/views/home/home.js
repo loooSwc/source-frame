@@ -1,12 +1,23 @@
 export default {
   data() {
-    const item = {
-      date: '2016-05-02',
-      name: '王小虎',
-      address: '上海市普陀区金沙江路 1518 弄'
-    };
     return {
-      tableData: Array(20).fill(item)
+      isCollapse: false,
+      menuList: [],
+      active: this.$route.path
+    }
+  }, mounted: function () {
+    this.getMenuList();
+  },
+  methods: {
+    getMenuList() {
+      this.$axios.post('/api/sys/menu/getMenuList.do').then(res => {
+        this.menuList = res.data;
+      })
+    },
+    changeActive(_active) {
+      console.log('111');
+      this.active = _active;
     }
   }
-};
+}
+;

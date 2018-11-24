@@ -1,29 +1,22 @@
+import EditUser from './edit-user/edit-user.vue'
 export default {
   data() {
-    const item = {
-      date: '2016-05-02',
-      name: '王小虎',
-      address: '上海市普陀区金沙江路 1518 弄'
-    };
-    console.log(this.$route.path);
     return {
-      tableData: Array(20).fill(item),
-      currentPage1: 5,
-      currentPage2: 5,
-      currentPage3: 5,
-      currentPage4: 4
+      tableData: [],
+      isShowEditUser: false
     }
   },methods: {
-    getUserPage(){
-      this.$service.tablePage('/api/sys/user/list.do',{}).then();
+    getUserPage(currentPageNo = 1){
+      this.$service.tablePage('/api/sys/user/getUserPage.do',{},currentPageNo).then(res =>{
+        this.tableData = res;
+      });
     },
-    handleSizeChange(val) {
-      console.log(`每页 ${val} 条`);
-    },
-    handleCurrentChange(val) {
-      console.log(`当前页: ${val}`);
+    edit: function (item) {
+      this.isShowEditUser = true;
     }
   }, mounted: function () {
     this.getUserPage();
+  },components: {
+    'edit-user':EditUser
   }
 };

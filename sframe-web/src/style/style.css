@@ -16,3 +16,13 @@
 .icon-img{
   width: 15px;
 }
+.button-color-red{
+  color:#f56c6c;
+}
+.menu-hide{
+  float: right;
+  vertical-align: middle;
+  margin-top: 100%;
+  margin-right: -1rem;
+  cursor:pointer;
+}

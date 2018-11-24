@@ -7,7 +7,7 @@
 .el-aside {
   color: #333;
 }
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 180px;
+.el-menu-vertical:not(.el-menu--collapse) {
+  width: 200px;
   min-height: 400px;
 }

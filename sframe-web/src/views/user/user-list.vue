@@ -1,25 +1,38 @@
 <template>
   <div>
-  <el-table :data="tableData" stripe style="width: 100%">
-    <el-table-column prop="date" label="日期">
-    </el-table-column>
-    <el-table-column  prop="name"
-      label="姓名"
-      >
-    </el-table-column>
+  <el-table :data="tableData.result" stripe style="width: 100%">
+    <el-table-column prop="userAccount" label="账户" show-overflow-tooltip></el-table-column>
+    <el-table-column prop="userName" label="姓名"show-overflow-tooltip></el-table-column>
+    <el-table-column prop="roleName" label="角色"show-overflow-tooltip></el-table-column>
+    <el-table-column prop="userEmail" label="邮箱"show-overflow-tooltip></el-table-column>
+    <el-table-column prop="userPhone" label="手机"show-overflow-tooltip></el-table-column>
+    <el-table-column prop="createTime " :formatter="dataFormat" label="创建日期"show-overflow-tooltip></el-table-column>
+    <el-table-column prop="lastLoginTime" :formatter="dataFormat" label="最后登录日期"show-overflow-tooltip></el-table-column>
     <el-table-column
-      prop="address"
-      label="地址">
+      fixed="right"
+      label="操作"
+      width="130">
+      <template slot-scope="scope">
+        <el-button type="text" size="small" @click="edit(scope.row)">编辑</el-button>
+        <el-dropdown trigger="click">
+          <el-button type="text" size="small">更多操作<i class="el-icon-arrow-down el-icon--right"></i></el-button>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item><el-button @click="handleClick(scope.row)" type="text" size="small">禁用</el-button></el-dropdown-item>
+            <el-dropdown-item><el-button @click="handleClick(scope.row)" type="text" size="small" class="button-color-red">删除</el-button></el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </template>
     </el-table-column>
   </el-table>
     <el-pagination
-      @size-change="handleSizeChange"
-      @current-change="handleCurrentChange"
-      :current-page.sync="currentPage1"
-      :page-size="100"
-      layout="total, prev, pager, next"
-      :total="1000">
+      @size-change="getUserPage"
+      @current-change="getUserPage"
+      :current-page.sync="tableData.currentPageNo"
+      :page-size="tableData.pageSize"
+      layout="total, prev, pager, next, jumper"
+      :total="tableData.totalCount">
     </el-pagination>
+    <edit-user :dialogFormVisible="isShowEditUser"></edit-user>
   </div>
 
 </template>

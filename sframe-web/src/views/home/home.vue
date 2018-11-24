@@ -1,11 +1,8 @@
 <template>
   <el-container style="border: 1px solid #eee">
-    <el-aside :style="isCollapse?'width:150px':'width:200px'" style="background-color: rgb(238, 241, 246);padding-right: 1rem;">
-      <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
-        <el-radio-button :label="false">展开{{active}}</el-radio-button>
-        <el-radio-button :label="true">收起</el-radio-button>
-      </el-radio-group>
-      <el-menu :default-active="active" class="el-menu-vertical-demo" :collapse="isCollapse" :router="true">
+    <el-aside :style="isCollapse?'width:90px':'width:216px'" style="background-color: rgb(238, 241, 246);padding-right: 1rem;">
+      <span class= "menu-hide" :class="isCollapse ? 'el-icon-d-arrow-right' : 'el-icon-d-arrow-left' " v-model="isCollapse" @click="isCollapse = !isCollapse"></span>
+      <el-menu :default-active="active" class="el-menu-vertical" :collapse="isCollapse" :router="true">
         <el-submenu :index="index+''" v-for="(item,index) in menuList" v-if="item.childMenus && item.childMenus.length > 0">
           <template slot="title">
             <i class="el-icon-location"></i>

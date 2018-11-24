@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Map;
 
 /**
- * 参数公共类
+ * 分页参数公共类
  */
 public class ParamsMap implements Serializable {
 

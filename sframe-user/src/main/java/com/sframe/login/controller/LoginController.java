@@ -1,12 +1,11 @@
-package com.sframe.user.controller;
+package com.sframe.login.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.sframe.common.ConstantClazz;
 import com.sframe.common.model.ResponseJSON;
 import com.sframe.common.model.SessionUserInfo;
 import com.sframe.common.util.StringUtil;
-import com.sframe.user.model.User;
-import com.sframe.user.service.LoginService;
+import com.sframe.login.service.LoginService;
 import org.apache.commons.collections.MapUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

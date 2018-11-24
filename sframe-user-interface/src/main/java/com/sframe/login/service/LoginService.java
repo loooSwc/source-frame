@@ -1,4 +1,4 @@
-package com.sframe.user.service;
+package com.sframe.login.service;
 
 import com.sframe.common.model.SessionUserInfo;
 

@@ -1,23 +1,26 @@
 <template>
   <div>
-    {{dialogFormVisible}}
-    <el-dialog title="收货地址" :visible.sync="dialogFormVisible">
-      <el-form :model="form">
-        <el-form-item label="活动名称" :label-width="formLabelWidth">
-          <el-input v-model="form.name" autocomplete="off"></el-input>
+      <el-form :model="user" class="sf-form">
+        <el-form-item label="用户账户" label-width="120px">
+            {{user.userAccount}}
         </el-form-item>
-        <el-form-item label="活动区域" :label-width="formLabelWidth">
-          <el-select v-model="form.region" placeholder="请选择活动区域">
-            <el-option label="区域一" value="shanghai"></el-option>
-            <el-option label="区域二" value="beijing"></el-option>
-          </el-select>
+        <el-form-item label="角色" label-width="120px">
+          {{user.roleName}}
+        </el-form-item>
+        <el-form-item label="用户名称" label-width="120px">
+          <el-input v-model="user.userName" placeholder="请输入用户名称" size="small"></el-input>
+        </el-form-item>
+        <el-form-item label="手机号" label-width="120px">
+          <el-input v-model="user.userPhone" placeholder="请输入手机号" size="small"></el-input>
+        </el-form-item>
+        <el-form-item label="邮箱" label-width="120px">
+          <el-input v-model="user.userEmail" placeholder="请输入邮箱" size="small"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button @click="dialogFormVisible = false">取 消</el-button>
-        <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
+        <el-button @click="close()" size="medium">取 消</el-button>
+        <el-button type="primary" @click="commit()" size="medium">确 定</el-button>
       </div>
-    </el-dialog>
   </div>
 </template>
 <script src="./edit-user.js"></script>

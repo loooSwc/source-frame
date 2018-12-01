@@ -8,7 +8,6 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: (resolve) => require(['../components/HelloWorld.vue'], resolve),
       redirect: '/login'
     },{
       path: '/login',

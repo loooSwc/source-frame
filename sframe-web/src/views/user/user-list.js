@@ -1,22 +1,29 @@
-import EditUser from './edit-user/edit-user.vue'
 export default {
   data() {
     return {
-      tableData: [],
-      isShowEditUser: false
+      tableData: []
     }
-  },methods: {
-    getUserPage(currentPageNo = 1){
-      this.$service.tablePage('/api/sys/user/getUserPage.do',{},currentPageNo).then(res =>{
+  }, methods: {
+    getUserPage(currentPageNo = 1) {
+      this.$service.tablePage('/api/sys/user/getUserPage.do', {}, currentPageNo).then(res => {
         this.tableData = res;
       });
     },
     edit: function (item) {
-      this.isShowEditUser = true;
+      this.$dialog({
+          title: '编辑用户',
+          width: '500px'
+        }, resolve =>
+          require(['./edit-user/edit-user.vue'], resolve)
+        , res => {
+          console.log('ok', res);
+        }, error => {
+          console.log('error', error)
+        }, {
+          'userId': item.userId
+        })
     }
   }, mounted: function () {
     this.getUserPage();
-  },components: {
-    'edit-user':EditUser
   }
 };

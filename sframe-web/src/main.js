@@ -9,13 +9,14 @@ import axios from './axios/axios';
 import tablePage from './axios/service';
 import moment from 'moment'
 import router from './router/router'
+import SeriousConfirm from './components/SeriousConfirm.js'
 
 Vue.use(Element, { size: 'small', zIndex: 3000 });
-
 
 Vue.config.productionTip = false;
 Vue.prototype.$axios = axios;
 Vue.prototype.$service = tablePage;
+Vue.prototype.$dialog = SeriousConfirm;
 // 定义全局过滤器--时间格式化
 Vue.prototype.dataFormat=function(row, column, cellValue, index) {
   return moment(cellValue).format('YYYY-MM-DD HH:mm:ss')
@@ -28,3 +29,4 @@ new Vue({
   components: { App },
   render: h => h(App)
 })
+

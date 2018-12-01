@@ -49,7 +49,7 @@ axios.interceptors.response.use(data => {// 响应成功关闭loading
   Message.error({
     message: '系统繁忙'
   })
-  return;
+  return Promise.reject(error);
 })
 
 export default axios

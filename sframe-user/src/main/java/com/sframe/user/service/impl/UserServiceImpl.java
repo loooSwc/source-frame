@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.Query;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -40,7 +41,8 @@ public class UserServiceImpl implements UserService {
         sb.append("  	u.user_email,  ");
         sb.append("  	u.user_phone,  ");
         sb.append("  	u.create_time,  ");
-        sb.append("  	u.last_login_time  ");
+        sb.append("  	u.last_login_time,  ");
+        sb.append("  	u.is_enable  ");
         sb.append("  FROM  ");
         sb.append("  	sys_user u  ");
         sb.append("  LEFT JOIN sys_role r ON u.role_id = r.role_id  ");
@@ -79,9 +81,47 @@ public class UserServiceImpl implements UserService {
                 user.setUserPhone(StringUtil.objToString(objs[index++]));
                 user.setCreateTime((Date)objs[index++]);
                 user.setLastLoginTime((Date)objs[index++]);
+                user.setIsEnable(StringUtil.objToString(objs[index++]));
+                user.setIsEnableName("0".equals(user.getIsEnable())?"启用":"禁用");
                 result.set(i,user);
             }
         }
         return page;
     }
+
+	@Override
+	public User getUserDetail(String userId) throws Exception {
+        StringBuffer sb = new StringBuffer();
+        sb.append("  SELECT  ");
+        sb.append("          u.user_id,  ");
+        sb.append("          u.user_account,  ");
+        sb.append("          u.user_name,  ");
+        sb.append("          u.is_enable,  ");
+        sb.append("          r.role_name,  ");
+        sb.append("          u.user_phone,  ");
+        sb.append("          u.user_email   ");
+        sb.append("  FROM  ");
+        sb.append("          sys_user u  ");
+        sb.append("          LEFT JOIN sys_role r ON u.role_id = r.role_id   ");
+        sb.append("  WHERE  ");
+        sb.append("          u.user_id = ?   ");
+        sb.append("  ORDER BY  ");
+        sb.append("          u.create_time DESC  ");
+        Query query = userDao.createSQLNativeQuery(sb.toString(),userId);
+        List result = query.getResultList();
+        User user = null;
+        if(CollectionUtils.isNotEmpty(result)){
+            Object[] objs = (Object[])result.get(0);
+            user = new User();
+            int index = 0;
+            user.setUserId(StringUtil.objToString(objs[index++]));
+            user.setUserAccount(StringUtil.objToString(objs[index++]));
+            user.setUserName(StringUtil.objToString(objs[index++]));
+            user.setIsEnable(StringUtil.objToString(objs[index++]));
+            user.setRoleName(StringUtil.objToString(objs[index++]));
+            user.setUserPhone(StringUtil.objToString(objs[index++]));
+            user.setUserEmail(StringUtil.objToString(objs[index++]));
+        }
+		return user;
+	}
 }

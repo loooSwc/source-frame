@@ -82,7 +82,6 @@ public class UserServiceImpl implements UserService {
                 user.setCreateTime((Date)objs[index++]);
                 user.setLastLoginTime((Date)objs[index++]);
                 user.setIsEnable(StringUtil.objToString(objs[index++]));
-                user.setIsEnableName("0".equals(user.getIsEnable())?"启用":"禁用");
                 result.set(i,user);
             }
         }

@@ -31,7 +31,7 @@
         </el-dropdown>
         <span>王小虎</span>
       </el-header>
-      <el-main>
+      <el-main class="sf-main">
         <router-view/>
       </el-main>
     </el-container>

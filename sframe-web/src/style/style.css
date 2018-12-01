@@ -1,3 +1,6 @@
+body{
+  background: #d5d5d5;
+}
 .middle-box {
   max-width: 400px;
   z-index: 100;
@@ -38,6 +41,7 @@
   color: #606266;
   font-size: 14px;
 }
-.switch-hide{
-  display: none;
+.sf-main{
+  min-height:  50rem;
+  background-color: #fff;
 }

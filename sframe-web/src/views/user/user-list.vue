@@ -16,7 +16,7 @@
             active-value="0"
             inactive-value="1">
           </el-switch>
-          <span>{{scope.row.isEnableName}}</span>
+          <span>{{scope.row.isEnable=='0'?'启用':'禁用'}}</span>
         </template>
       </el-table-column>
       <el-table-column

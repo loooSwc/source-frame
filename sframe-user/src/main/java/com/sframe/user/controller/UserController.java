@@ -32,7 +32,7 @@ public class UserController {
     private UserService userService;
     @RequestMapping(value = "/getUserPage",method = RequestMethod.POST)
     @ResponseBody
-    public Object getUserPage(Page page, @RequestBody ParamsMap paramsMap) throws Exception {
+    public String getUserPage(Page page, @RequestBody ParamsMap paramsMap) throws Exception {
         try{
             page = userService.getUserPage(paramsMap);
         }catch (Exception e){
@@ -43,7 +43,7 @@ public class UserController {
 
     @RequestMapping(value = "/getUserDetail",method = RequestMethod.POST)
     @ResponseBody
-    public Object getUserDetail(@RequestBody Map map) throws Exception {
+    public String getUserDetail(@RequestBody Map map) throws Exception {
         ResponseJSON responseJSON = new ResponseJSON();
         try{
             String userId = MapUtils.getString(map,"userId");
@@ -56,4 +56,65 @@ public class UserController {
         }
         return JSONObject.toJSONString(responseJSON);
     }
+
+    /**
+     * @Author cxy@acmtc.com
+     * @Description  添加用户
+     * @Date 14:52 2018/12/6
+     * @Param
+     * @return
+     **/
+	@RequestMapping(value = "/addUser",method = RequestMethod.POST)
+	@ResponseBody
+	public String addUser(@RequestBody User user) throws Exception {
+		ResponseJSON responseJSON = new ResponseJSON();
+		try{
+			userService.addUser(user);
+		}catch (Exception e){
+			responseJSON.setMessage(e.getMessage());
+			log.error(e.getMessage(),e);
+			throw e;
+		}
+		return JSONObject.toJSONString(responseJSON);
+	}
+	@RequestMapping(value = "/checkUserAccount",method = RequestMethod.POST)
+	@ResponseBody
+	public String checkUserAccount(@RequestBody String userAccount) throws Exception {
+		ResponseJSON responseJSON = new ResponseJSON();
+		try{
+			boolean checkUserAccount = userService.checkUserAccount(userAccount);
+			responseJSON.setData(checkUserAccount);
+		}catch (Exception e){
+			responseJSON.setMessage(e.getMessage());
+			log.error(e.getMessage(),e);
+			throw e;
+		}
+		return JSONObject.toJSONString(responseJSON);
+	}
+	@RequestMapping(value = "/editUser",method = RequestMethod.POST)
+	@ResponseBody
+	public String editUser(@RequestBody User user) throws Exception {
+		ResponseJSON responseJSON = new ResponseJSON();
+		try{
+			userService.editUser(user);
+		}catch (Exception e){
+			responseJSON.setMessage(e.getMessage());
+			log.error(e.getMessage(),e);
+			throw e;
+		}
+		return JSONObject.toJSONString(responseJSON);
+	}
+	@RequestMapping(value = "/changeStatus",method = RequestMethod.POST)
+	@ResponseBody
+	public String changeStatus(@RequestBody User user) throws Exception {
+		ResponseJSON responseJSON = new ResponseJSON();
+		try{
+			userService.changeStatus(user);
+		}catch (Exception e){
+			responseJSON.setMessage(e.getMessage());
+			log.error(e.getMessage(),e);
+			throw e;
+		}
+		return JSONObject.toJSONString(responseJSON);
+	}
 }

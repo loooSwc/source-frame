@@ -29,8 +29,8 @@ body{
   margin-right: -1rem;
   cursor:pointer;
 }
-.sf-form input{
-    width: 15rem;
+.sf-form {
+    width: 25rem;
 }
 .dialog-footer{
   padding-top: 10px;

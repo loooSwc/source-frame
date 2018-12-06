@@ -23,4 +23,7 @@ public class ConstantClazz {
 	 * 生成：由/user/login/getpasskey.do生成并存储到session中
 	 */
 	public final static String SYS_SESSION_PASSWORD = "SESSION_PASSKEY";	//密码加密传输Key
+
+	public final static String SYS_SESSION_PASSWORD_REGISTER = "SESSION_PASSKEY_REGISTER";
+
 }

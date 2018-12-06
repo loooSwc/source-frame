@@ -1,10 +1,12 @@
 package com.sframe.user.service.impl;
 
+import com.sframe.common.ConstantClazz;
 import com.sframe.common.dao.ParamsMap;
 import com.sframe.common.dao.QueryMap;
 import com.sframe.common.dao.support.Page;
-import com.sframe.common.util.StringUtil;
+import com.sframe.common.util.*;
 import com.sframe.user.dao.UserDao;
+import com.sframe.user.model.BaseUser;
 import com.sframe.user.model.User;
 import com.sframe.user.service.UserService;
 import org.apache.commons.collections.CollectionUtils;
@@ -14,6 +16,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.Query;
+import javax.servlet.http.HttpSession;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -123,4 +127,55 @@ public class UserServiceImpl implements UserService {
         }
 		return user;
 	}
+
+	@Override
+	public void addUser(User user) throws Exception {
+        user.setIsEnable("1");
+        user.setCreateTime(new Date());
+        HttpSession session = SessionUtil.getSession();
+        String key = (String) session.getAttribute(ConstantClazz.SYS_SESSION_PASSWORD_REGISTER);
+        session.removeAttribute(ConstantClazz.SYS_SESSION_PASSWORD_REGISTER);
+        String password = DesUtil.strDec(user.getUserPassword(), key, null, null);
+        int salt = (int)((Math.random()*9+1)*100000);
+        String userSalt = StringUtil.objToString(salt);
+        String saltPassword = AuthUtil.createSaltPassword(password , userSalt);
+        user.setUserPassword(saltPassword);
+        user.setSalt(userSalt);
+        BaseUser baseUser = new BaseUser();
+        BeanUtils.copyPropertiesByModel(baseUser,user);
+        userDao.saveOrUpdate(baseUser);
+	}
+
+    @Override
+    public boolean checkUserAccount(String userAccount) throws Exception {
+        StringBuffer sb = new StringBuffer();
+        sb.append(" 	SELECT		   ");
+        sb.append(" 		count(1)	   ");
+        sb.append(" 	FROM		   ");
+        sb.append(" 		sys_user 	   ");
+        sb.append(" 	WHERE		   ");
+        sb.append(" 		user_account = ?	   ");
+        Query query = userDao.createSQLNativeQuery(sb.toString(),userAccount);
+        Object o = query.getSingleResult();
+        int totalCount =0;
+        if(o instanceof BigInteger){
+            totalCount = ((BigInteger)o).intValue();
+        }
+        return totalCount > 0;
+    }
+
+    @Override
+    public void editUser(User user) throws Exception {
+        List params =new ArrayList();
+        params.add(user.getUserName());
+        params.add(user.getUserPhone());
+        params.add(user.getUserEmail());
+        params.add(user.getUserId());
+        userDao.execSQL("UPDATE sys_user SET user_name = ?, user_phone = ?, user_email = ? WHERE user_id = ?",params.toArray());
+    }
+
+    @Override
+    public void changeStatus(User user) throws Exception {
+        userDao.execSQL("UPDATE sys_user SET is_enable = ? WHERE user_id = ?",user.getIsEnable(),user.getUserId());
+    }
 }

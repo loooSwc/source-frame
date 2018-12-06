@@ -1,98 +1,10 @@
-<!doctype html>
-<html xmlns:v-on="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-	<meta charset="utf-8">
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width">
-	<meta name="format-detection" content="telephone=no">
-	<link href="css/bootstrap.min.css?v=3.4.0" rel="stylesheet">
-	<link href="font-awesome/css/font-awesome.css?v=4.3.0" rel="stylesheet">
-
-	<link href="css/animate.css" rel="stylesheet">
-	<link href="css/style.css?v=2.2.0" rel="stylesheet">
-	<title>SFrame</title>
+	<meta charset="UTF-8">
+	<title>Index Page</title>
 </head>
 <body>
-<!--[if lte IE 8]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-	your browser</a> to improve your experience.</p>
-<![endif]-->
-
-<div id="app">
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<!-- Mainly scripts -->
-<script src="js/jquery-2.1.1.min.js"></script>
-<script src="js/bootstrap.min.js?v=3.4.0"></script>
-<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-
-<!-- Flot -->
-<script src="js/plugins/flot/jquery.flot.js"></script>
-<script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-<script src="js/plugins/flot/jquery.flot.spline.js"></script>
-<script src="js/plugins/flot/jquery.flot.resize.js"></script>
-<script src="js/plugins/flot/jquery.flot.pie.js"></script>
-
-<!-- Peity -->
-<script src="js/plugins/peity/jquery.peity.min.js"></script>
-<script src="js/demo/peity-demo.js"></script>
-
-<!-- Custom and plugin javascript -->
-<script src="js/hplus.js?v=2.2.0"></script>
-<script src="js/plugins/pace/pace.min.js"></script>
-
-<!-- jQuery UI -->
-<script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
-
-<!-- GITTER -->
-<script src="js/plugins/gritter/jquery.gritter.min.js"></script>
-
-<!-- EayPIE -->
-<script src="js/plugins/easypiechart/jquery.easypiechart.js"></script>
-
-<!-- Sparkline -->
-<script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
-
-<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-
-<script src="app/login/login.js"></script>
-
-<script src="app/main.js"></script>
-
-<!-- Sparkline demo data  -->
-<script src="js/demo/sparkline-demo.js"></script>
-<script type="text/javascript">
-	//处理键盘事件 禁止后退键（Backspace）密码或单行、多行文本框除外
-	function banBackSpace(e) {
-		var ev = e || window.event;//获取event对象
-		var obj = ev.target || ev.srcElement;//获取事件源
-		var t = obj.type || obj.getAttribute('type');//获取事件源类型
-		//获取作为判断条件的事件类型
-		var vReadOnly = obj.getAttribute('readonly');
-		var vEnabled = obj.getAttribute('enabled');
-		//处理null值情况
-		vReadOnly = (vReadOnly == null) ? false : vReadOnly;
-		vEnabled = (vEnabled == null) ? true : vEnabled;
-		//当敲Backspace键时，事件源类型为密码或单行、多行文本的，
-		//并且readonly属性为true或enabled属性为false的，则退格键失效
-		var flag1 = (ev.keyCode == 8 && (t == "password" || t == "text" || t == "textarea") && (vReadOnly || vEnabled != true)) ? true : false;
-		//当敲Backspace键时，事件源类型非密码或单行、多行文本的，则退格键失效
-		/* var flag2=(ev.keyCode == 8 && t != "password" && t != "text" && t != "textarea") ? true : false;
-		 //判断
-		 if(flag2){
-		 return false;
-		 } */
-		if (flag1) {
-			return false;
-		}
-	}
-	//禁止后退键 作用于Firefox、Opera
-	document.onkeypress = banBackSpace;
-	//禁止后退键 作用于IE、Chrome
-	document.onkeydown = banBackSpace;
-</script>
-<!-- endbuild -->
+Hello,Index Page!
 </body>
 </html>

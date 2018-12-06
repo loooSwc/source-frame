@@ -1,10 +1,10 @@
 <template>
   <div class="login">
-    <el-form  label-width="0px"
+    <el-form  label-width="0px"  @keyup.enter.native="login()"
              class="demo-ruleForm middle-box text-center loginscreen login-form">
       <h4>用户登陆</h4>
       <el-form-item>
-        <el-input placeholder="请输入用户名" v-model="userAccount">
+        <el-input placeholder="请输入用户名" v-model="userAccount" type="text">
           <template slot="prepend"><img src="../../assets/img/user.png" class="icon-img"></template>
         </el-input>
       </el-form-item>
@@ -14,7 +14,7 @@
         </el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="text" class="forget-password">忘记密码?</el-button>
+        <!--<el-button type="text" class="forget-password">忘记密码?</el-button>-->
       </el-form-item>
       <el-form-item>
         <el-button type="primary" class="login-button" size="medium" @click="login()">提交</el-button>

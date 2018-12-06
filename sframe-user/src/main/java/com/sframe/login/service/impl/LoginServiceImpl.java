@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
+
 @Service
 @Transactional
 public class LoginServiceImpl implements LoginService {
@@ -25,6 +27,7 @@ public class LoginServiceImpl implements LoginService {
         String salt = baseUser.getSalt();
         String pass = md5.getMD5ofStr(password);
         if (md5.getMD5ofStr(pass+salt).equals(baseUser.getUserPassword())) {
+            baseUser.setLastLoginTime(new Date());
             User user = new User();
             BeanUtils.copyProperties(user,baseUser);
             SessionUserInfo sessionUserInfo = new SessionUserInfo();

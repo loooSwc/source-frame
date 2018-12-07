@@ -36,6 +36,7 @@ public class LoginController {
             userCookie.setPath("/");
             userCookie.setMaxAge(24 * 60 * 60 * 15);
             response.addCookie(userCookie);
+            responseJSON.setData(sessionUserInfo);
         }
         return JSONObject.toJSONString(responseJSON);
     }

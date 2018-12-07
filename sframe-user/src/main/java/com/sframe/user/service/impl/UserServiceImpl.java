@@ -178,4 +178,33 @@ public class UserServiceImpl implements UserService {
     public void changeStatus(User user) throws Exception {
         userDao.execSQL("UPDATE sys_user SET is_enable = ? WHERE user_id = ?",user.getIsEnable(),user.getUserId());
     }
+
+    @Override
+    public String resetPassword(String userId) throws Exception {
+        String newPassword = RandomUtil.getRandomStr(6);
+        BaseUser user = userDao.findOne(userId);
+        MD5 md5 = new MD5();
+        String salt = user.getSalt();
+        String pass = md5.getMD5ofStr(newPassword);
+        String password = md5.getMD5ofStr(pass+salt);
+        user.setUserPassword(password);
+        return newPassword;
+    }
+
+    @Override
+    public void editPassword(User user) throws Exception {
+        BaseUser baseUser = userDao.findOne(user.getUserId());
+        HttpSession session = SessionUtil.getSession();
+        String key = (String) session.getAttribute(ConstantClazz.SYS_SESSION_PASSWORD_EDIT);
+        session.removeAttribute(ConstantClazz.SYS_SESSION_PASSWORD_EDIT);
+        String password = DesUtil.strDec(user.getUserPassword(), key, null, null);
+        String userSalt = baseUser.getSalt();
+        String saltPassword = AuthUtil.createSaltPassword(password , userSalt);
+        baseUser.setUserPassword(saltPassword);
+    }
+
+    @Override
+    public void deleteUser(String userId) throws Exception {
+        userDao.delete(userId);
+    }
 }

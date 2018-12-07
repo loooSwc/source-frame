@@ -25,5 +25,5 @@ public class ConstantClazz {
 	public final static String SYS_SESSION_PASSWORD = "SESSION_PASSKEY";	//密码加密传输Key
 
 	public final static String SYS_SESSION_PASSWORD_REGISTER = "SESSION_PASSKEY_REGISTER";
-
+	public final static String SYS_SESSION_PASSWORD_EDIT = "SESSION_PASSKEY_EDIT";
 }

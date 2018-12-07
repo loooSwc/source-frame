@@ -19,6 +19,15 @@ function editUser(_user) {
 function changeStatus(_user) {
   return axios.post('/api/sys/user/changeStatus.do',_user);
 }
+function resetPassword(_userId) {
+  return axios.post('/api/sys/user/resetPassword.do',_userId);
+}
+function editPassword(_user) {
+  return axios.post('/api/sys/user/editPassword.do',_user);
+}
+function deleteUser(_userId) {
+  return axios.post('/api/sys/user/deleteUser.do',_userId);
+}
 
 export default {
   getUserDetail,
@@ -26,5 +35,8 @@ export default {
   checkUserAccount,
   getPassKey,
   editUser,
-  changeStatus
+  changeStatus,
+  resetPassword,
+  editPassword,
+  deleteUser
 }

@@ -59,4 +59,25 @@ public interface UserService {
 	 * @return
 	 **/
 	void changeStatus(User user) throws Exception;
+
+	/**
+	 * 重置密码
+	 * @param userId
+	 * @throws Exception
+	 */
+    String resetPassword(String userId) throws Exception;
+
+	/**
+	 * 修改密码
+	 * @param user
+	 * @throws Exception
+	 */
+	void editPassword(User user) throws Exception;
+
+	/**
+	 * 删除用户
+	 * @param userId
+	 * @throws Exception
+	 */
+	void deleteUser(String userId) throws Exception;
 }

@@ -117,4 +117,44 @@ public class UserController {
 		}
 		return JSONObject.toJSONString(responseJSON);
 	}
+	@RequestMapping(value = "/resetPassword",method = RequestMethod.POST)
+	@ResponseBody
+	public String resetPassword(@RequestBody String userId) throws Exception {
+		ResponseJSON responseJSON = new ResponseJSON();
+		try{
+			String password = userService.resetPassword(userId);
+			responseJSON.setData(password);
+		}catch (Exception e){
+			responseJSON.setMessage(e.getMessage());
+			log.error(e.getMessage(),e);
+			throw e;
+		}
+		return JSONObject.toJSONString(responseJSON);
+	}
+	@RequestMapping(value = "/editPassword",method = RequestMethod.POST)
+	@ResponseBody
+	public String editPassword(@RequestBody User user) throws Exception {
+		ResponseJSON responseJSON = new ResponseJSON();
+		try{
+			userService.editPassword(user);
+		}catch (Exception e){
+			responseJSON.setMessage(e.getMessage());
+			log.error(e.getMessage(),e);
+			throw e;
+		}
+		return JSONObject.toJSONString(responseJSON);
+	}
+	@RequestMapping(value = "/deleteUser",method = RequestMethod.POST)
+	@ResponseBody
+	public String deleteUser(@RequestBody String userId) throws Exception {
+		ResponseJSON responseJSON = new ResponseJSON();
+		try{
+			userService.deleteUser(userId);
+		}catch (Exception e){
+			responseJSON.setMessage(e.getMessage());
+			log.error(e.getMessage(),e);
+			throw e;
+		}
+		return JSONObject.toJSONString(responseJSON);
+	}
 }

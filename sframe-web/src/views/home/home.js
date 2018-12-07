@@ -1,9 +1,12 @@
+import router from "../../router/router";
+
 export default {
   data() {
     return {
       isCollapse: false,
       menuList: [],
-      active: this.$route.path
+      active: this.$route.path,
+      userAccount: sessionStorage.getItem('userSessionAccount')
     }
   }, mounted: function () {
     this.getMenuList();
@@ -14,9 +17,10 @@ export default {
         this.menuList = res.data;
       })
     },
-    changeActive(_active) {
-      console.log('111');
-      this.active = _active;
+    handleCommand(command) {
+      console.log('layout')
+      sessionStorage.removeItem('userSessionAccount')
+      router.push({path:'/login'});
     }
   }
 }

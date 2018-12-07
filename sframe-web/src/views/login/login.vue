@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <el-form  label-width="0px"  @keyup.enter.native="login()"
-             class="demo-ruleForm middle-box text-center loginscreen login-form">
+             class=" middle-box text-center login-form">
       <h4>用户登陆</h4>
       <el-form-item>
         <el-input placeholder="请输入用户名" v-model="userAccount" type="text">

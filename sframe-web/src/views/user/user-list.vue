@@ -38,6 +38,9 @@
             <el-button type="text" size="small">更多操作<i class="el-icon-arrow-down el-icon--right"></i></el-button>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item>
+                <el-button @click="editPassword(scope.row)" type="text" size="small">修改密码</el-button>
+              </el-dropdown-item>
+              <el-dropdown-item>
                 <el-button @click="resetPassword(scope.row)" type="text" size="small">重置密码</el-button>
               </el-dropdown-item>
               <el-dropdown-item>

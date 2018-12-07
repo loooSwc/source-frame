@@ -4,11 +4,11 @@
   float: right;
 }
 .login-form{
+  width: 300px;
+  height: 400px;
   background: #ccc;
   padding: 10px 40px;
   margin: 13rem auto 12rem;
-  width: 38.7rem;
-  height: 19.5rem;
   color: #555555;
 }
 .login{

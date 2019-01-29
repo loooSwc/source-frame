@@ -1,6 +1,6 @@
 <template>
   <el-container style="border: 1px solid #eee">
-    <el-aside :style="isCollapse?'width:90px':'width:216px'" style="background-color: rgb(238, 241, 246);padding-right: 1rem;">
+    <el-aside  style="background-color: rgb(238, 241, 246);padding-right: 1rem;width: auto;">
       <span class= "menu-hide" :class="isCollapse ? 'el-icon-d-arrow-right' : 'el-icon-d-arrow-left' " v-model="isCollapse" @click="isCollapse = !isCollapse"></span>
       <el-menu :default-active="active" class="el-menu-vertical" :collapse="isCollapse" :router="true">
         <el-submenu :index="index+''" v-for="(item,index) in menuList" v-if="item.childMenus && item.childMenus.length > 0">

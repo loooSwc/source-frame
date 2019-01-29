@@ -1,0 +1,47 @@
+body{
+  background: #f5f7f9;
+}
+.middle-box {
+  max-width: 400px;
+  z-index: 100;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+.lockscreen.middle-box {
+  width: 200px;
+  padding-top: 110px;
+}
+.loginscreen.middle-box {
+  width: 400px;
+  height: 400px;
+}
+
+.icon-img{
+  width: 15px;
+}
+.button-color-red{
+  color:#f56c6c;
+}
+.menu-hide{
+  float: right;
+  vertical-align: middle;
+  margin-top: 100%;
+  margin-right: -1rem;
+  cursor:pointer;
+}
+.sf-form {
+    width: 25rem;
+}
+.dialog-footer{
+  padding-top: 10px;
+  text-align: right;
+  box-sizing: border-box;
+}
+.dialog-body{
+  color: #606266;
+  font-size: 14px;
+}
+.sf-main{
+  min-height:  50rem;
+  background-color: #fff;
+}

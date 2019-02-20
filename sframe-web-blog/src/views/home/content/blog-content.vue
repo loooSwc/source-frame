@@ -1,7 +1,7 @@
 <template>
   <div>
     <section>
-      <transition-group name="el-fade-in">
+      <transition-group name="el-zoom-in-center">
         <el-card shadow="hover" v-for="(item,index) in blogs" :key="'p'+index" style="margin-bottom: 20px" v-if="!item.hide">
           <div slot="header">
             <el-row>

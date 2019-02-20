@@ -79,7 +79,7 @@ public class CheckAuthFilter implements Filter {
 	}
 
 	public void error(HttpServletResponse resp,JSONObject  respJson) throws IOException {
-		log.info("ACMTC Filter Result："+respJson.toJSONString());
+		log.info("Filter Result："+respJson.toJSONString());
 		PrintWriter  writer = resp.getWriter();
 		writer.print(JSONObject.toJSONString(respJson));
 		writer.flush();

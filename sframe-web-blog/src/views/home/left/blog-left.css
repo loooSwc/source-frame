@@ -25,7 +25,7 @@
 .site-state-item-count {
   display: block;
   text-align: center;
-  color: inherit;
+  color: rgb(85, 85, 85);
   font-weight: 600;
   font-size: 16px;
 }
@@ -75,6 +75,8 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  color: inherit;
+  font-size: 12px;
 }
 .links-of-author-item .fa {
   margin-right: 2px;
@@ -105,4 +107,20 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  color: initial;
+  font-size: 12px;
+}
+.site-state-item a{
+  text-decoration:none
+}
+.el-menu-item, .el-submenu__title{
+  height: 45px;
+  line-height: 45px;
+}
+.left-fixed{
+  margin-top: 0;
+  position: fixed;
+  z-index: 1;
+  width: 244px;
+  top:0;
 }

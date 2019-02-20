@@ -8,6 +8,7 @@ import tablePage from './axios/service';
 import moment from 'moment'
 import router from './router/router'
 import SeriousConfirm from './components/SeriousConfirm.js';
+import 'font-awesome/css/font-awesome.css';
 
 Vue.use(Element);
 

@@ -22,6 +22,10 @@ export default new Router({
         {
           path: 'user/list',
           component: (resolve) => require(['../views/user/user-list.vue'], resolve)
+        },
+        {
+          path: 'business/blog/list',
+          component: (resolve) => require(['../views/blog/list/blog-list.vue'], resolve)
         }
       ]
     }

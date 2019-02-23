@@ -1,8 +1,5 @@
-import blogLeft from "./left/blog-left.vue";
-
 export default {
   components: {
-    blogLeft
   },
   data() {
     return {
@@ -242,6 +239,237 @@ export default {
             "site_admin": false
           },
           "truncated": false
+        },
+        {
+          "url": "https://api.github.com/gists/200f79981333b6c3ce0f5bfa57598b46",
+          "forks_url": "https://api.github.com/gists/200f79981333b6c3ce0f5bfa57598b46/forks",
+          "commits_url": "https://api.github.com/gists/200f79981333b6c3ce0f5bfa57598b46/commits",
+          "id": "200f79981333b6c3ce0f5bfa57598b46",
+          "node_id": "MDQ6R2lzdDIwMGY3OTk4MTMzM2I2YzNjZTBmNWJmYTU3NTk4YjQ2",
+          "git_pull_url": "https://gist.github.com/200f79981333b6c3ce0f5bfa57598b46.git",
+          "git_push_url": "https://gist.github.com/200f79981333b6c3ce0f5bfa57598b46.git",
+          "html_url": "https://gist.github.com/200f79981333b6c3ce0f5bfa57598b46",
+          "files": {
+            "VBlog项目结构": {
+              "filename": "VBlog项目结构",
+              "type": "text/plain",
+              "language": null,
+              "raw_url": "https://gist.githubusercontent.com/GitHub-Laziji/200f79981333b6c3ce0f5bfa57598b46/raw/0dca7e2f5f7db6f1fbdd30410bb3b91f877e044c/VBlog%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84",
+              "size": 3264
+            }
+          },
+          "public": true,
+          "created_at": "2018-05-12T04:42:39Z",
+          "updated_at": "2018-05-12T06:56:51Z",
+          "description": "介绍一下这个项目的代码结构, 不定时更新文档",
+          "comments": 0,
+          "user": null,
+          "comments_url": "https://api.github.com/gists/200f79981333b6c3ce0f5bfa57598b46/comments",
+          "owner": {
+            "login": "GitHub-Laziji",
+            "id": 30425217,
+            "node_id": "MDQ6VXNlcjMwNDI1MjE3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/30425217?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/GitHub-Laziji",
+            "html_url": "https://github.com/GitHub-Laziji",
+            "followers_url": "https://api.github.com/users/GitHub-Laziji/followers",
+            "following_url": "https://api.github.com/users/GitHub-Laziji/following{/other_user}",
+            "gists_url": "https://api.github.com/users/GitHub-Laziji/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/GitHub-Laziji/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/GitHub-Laziji/subscriptions",
+            "organizations_url": "https://api.github.com/users/GitHub-Laziji/orgs",
+            "repos_url": "https://api.github.com/users/GitHub-Laziji/repos",
+            "events_url": "https://api.github.com/users/GitHub-Laziji/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/GitHub-Laziji/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "truncated": false
+        },{
+          "url": "https://api.github.com/gists/200f79981333b6c3ce0f5bfa57598b46",
+          "forks_url": "https://api.github.com/gists/200f79981333b6c3ce0f5bfa57598b46/forks",
+          "commits_url": "https://api.github.com/gists/200f79981333b6c3ce0f5bfa57598b46/commits",
+          "id": "200f79981333b6c3ce0f5bfa57598b46",
+          "node_id": "MDQ6R2lzdDIwMGY3OTk4MTMzM2I2YzNjZTBmNWJmYTU3NTk4YjQ2",
+          "git_pull_url": "https://gist.github.com/200f79981333b6c3ce0f5bfa57598b46.git",
+          "git_push_url": "https://gist.github.com/200f79981333b6c3ce0f5bfa57598b46.git",
+          "html_url": "https://gist.github.com/200f79981333b6c3ce0f5bfa57598b46",
+          "files": {
+            "VBlog项目结构": {
+              "filename": "VBlog项目结构",
+              "type": "text/plain",
+              "language": null,
+              "raw_url": "https://gist.githubusercontent.com/GitHub-Laziji/200f79981333b6c3ce0f5bfa57598b46/raw/0dca7e2f5f7db6f1fbdd30410bb3b91f877e044c/VBlog%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84",
+              "size": 3264
+            }
+          },
+          "public": true,
+          "created_at": "2018-05-12T04:42:39Z",
+          "updated_at": "2018-05-12T06:56:51Z",
+          "description": "介绍一下这个项目的代码结构, 不定时更新文档",
+          "comments": 0,
+          "user": null,
+          "comments_url": "https://api.github.com/gists/200f79981333b6c3ce0f5bfa57598b46/comments",
+          "owner": {
+            "login": "GitHub-Laziji",
+            "id": 30425217,
+            "node_id": "MDQ6VXNlcjMwNDI1MjE3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/30425217?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/GitHub-Laziji",
+            "html_url": "https://github.com/GitHub-Laziji",
+            "followers_url": "https://api.github.com/users/GitHub-Laziji/followers",
+            "following_url": "https://api.github.com/users/GitHub-Laziji/following{/other_user}",
+            "gists_url": "https://api.github.com/users/GitHub-Laziji/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/GitHub-Laziji/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/GitHub-Laziji/subscriptions",
+            "organizations_url": "https://api.github.com/users/GitHub-Laziji/orgs",
+            "repos_url": "https://api.github.com/users/GitHub-Laziji/repos",
+            "events_url": "https://api.github.com/users/GitHub-Laziji/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/GitHub-Laziji/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "truncated": false
+        },{
+          "url": "https://api.github.com/gists/200f79981333b6c3ce0f5bfa57598b46",
+          "forks_url": "https://api.github.com/gists/200f79981333b6c3ce0f5bfa57598b46/forks",
+          "commits_url": "https://api.github.com/gists/200f79981333b6c3ce0f5bfa57598b46/commits",
+          "id": "200f79981333b6c3ce0f5bfa57598b46",
+          "node_id": "MDQ6R2lzdDIwMGY3OTk4MTMzM2I2YzNjZTBmNWJmYTU3NTk4YjQ2",
+          "git_pull_url": "https://gist.github.com/200f79981333b6c3ce0f5bfa57598b46.git",
+          "git_push_url": "https://gist.github.com/200f79981333b6c3ce0f5bfa57598b46.git",
+          "html_url": "https://gist.github.com/200f79981333b6c3ce0f5bfa57598b46",
+          "files": {
+            "VBlog项目结构": {
+              "filename": "VBlog项目结构",
+              "type": "text/plain",
+              "language": null,
+              "raw_url": "https://gist.githubusercontent.com/GitHub-Laziji/200f79981333b6c3ce0f5bfa57598b46/raw/0dca7e2f5f7db6f1fbdd30410bb3b91f877e044c/VBlog%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84",
+              "size": 3264
+            }
+          },
+          "public": true,
+          "created_at": "2018-05-12T04:42:39Z",
+          "updated_at": "2018-05-12T06:56:51Z",
+          "description": "介绍一下这个项目的代码结构, 不定时更新文档",
+          "comments": 0,
+          "user": null,
+          "comments_url": "https://api.github.com/gists/200f79981333b6c3ce0f5bfa57598b46/comments",
+          "owner": {
+            "login": "GitHub-Laziji",
+            "id": 30425217,
+            "node_id": "MDQ6VXNlcjMwNDI1MjE3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/30425217?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/GitHub-Laziji",
+            "html_url": "https://github.com/GitHub-Laziji",
+            "followers_url": "https://api.github.com/users/GitHub-Laziji/followers",
+            "following_url": "https://api.github.com/users/GitHub-Laziji/following{/other_user}",
+            "gists_url": "https://api.github.com/users/GitHub-Laziji/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/GitHub-Laziji/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/GitHub-Laziji/subscriptions",
+            "organizations_url": "https://api.github.com/users/GitHub-Laziji/orgs",
+            "repos_url": "https://api.github.com/users/GitHub-Laziji/repos",
+            "events_url": "https://api.github.com/users/GitHub-Laziji/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/GitHub-Laziji/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "truncated": false
+        },{
+          "url": "https://api.github.com/gists/200f79981333b6c3ce0f5bfa57598b46",
+          "forks_url": "https://api.github.com/gists/200f79981333b6c3ce0f5bfa57598b46/forks",
+          "commits_url": "https://api.github.com/gists/200f79981333b6c3ce0f5bfa57598b46/commits",
+          "id": "200f79981333b6c3ce0f5bfa57598b46",
+          "node_id": "MDQ6R2lzdDIwMGY3OTk4MTMzM2I2YzNjZTBmNWJmYTU3NTk4YjQ2",
+          "git_pull_url": "https://gist.github.com/200f79981333b6c3ce0f5bfa57598b46.git",
+          "git_push_url": "https://gist.github.com/200f79981333b6c3ce0f5bfa57598b46.git",
+          "html_url": "https://gist.github.com/200f79981333b6c3ce0f5bfa57598b46",
+          "files": {
+            "VBlog项目结构": {
+              "filename": "VBlog项目结构",
+              "type": "text/plain",
+              "language": null,
+              "raw_url": "https://gist.githubusercontent.com/GitHub-Laziji/200f79981333b6c3ce0f5bfa57598b46/raw/0dca7e2f5f7db6f1fbdd30410bb3b91f877e044c/VBlog%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84",
+              "size": 3264
+            }
+          },
+          "public": true,
+          "created_at": "2018-05-12T04:42:39Z",
+          "updated_at": "2018-05-12T06:56:51Z",
+          "description": "介绍一下这个项目的代码结构, 不定时更新文档",
+          "comments": 0,
+          "user": null,
+          "comments_url": "https://api.github.com/gists/200f79981333b6c3ce0f5bfa57598b46/comments",
+          "owner": {
+            "login": "GitHub-Laziji",
+            "id": 30425217,
+            "node_id": "MDQ6VXNlcjMwNDI1MjE3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/30425217?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/GitHub-Laziji",
+            "html_url": "https://github.com/GitHub-Laziji",
+            "followers_url": "https://api.github.com/users/GitHub-Laziji/followers",
+            "following_url": "https://api.github.com/users/GitHub-Laziji/following{/other_user}",
+            "gists_url": "https://api.github.com/users/GitHub-Laziji/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/GitHub-Laziji/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/GitHub-Laziji/subscriptions",
+            "organizations_url": "https://api.github.com/users/GitHub-Laziji/orgs",
+            "repos_url": "https://api.github.com/users/GitHub-Laziji/repos",
+            "events_url": "https://api.github.com/users/GitHub-Laziji/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/GitHub-Laziji/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "truncated": false
+        },{
+          "url": "https://api.github.com/gists/200f79981333b6c3ce0f5bfa57598b46",
+          "forks_url": "https://api.github.com/gists/200f79981333b6c3ce0f5bfa57598b46/forks",
+          "commits_url": "https://api.github.com/gists/200f79981333b6c3ce0f5bfa57598b46/commits",
+          "id": "200f79981333b6c3ce0f5bfa57598b46",
+          "node_id": "MDQ6R2lzdDIwMGY3OTk4MTMzM2I2YzNjZTBmNWJmYTU3NTk4YjQ2",
+          "git_pull_url": "https://gist.github.com/200f79981333b6c3ce0f5bfa57598b46.git",
+          "git_push_url": "https://gist.github.com/200f79981333b6c3ce0f5bfa57598b46.git",
+          "html_url": "https://gist.github.com/200f79981333b6c3ce0f5bfa57598b46",
+          "files": {
+            "VBlog项目结构": {
+              "filename": "VBlog项目结构",
+              "type": "text/plain",
+              "language": null,
+              "raw_url": "https://gist.githubusercontent.com/GitHub-Laziji/200f79981333b6c3ce0f5bfa57598b46/raw/0dca7e2f5f7db6f1fbdd30410bb3b91f877e044c/VBlog%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84",
+              "size": 3264
+            }
+          },
+          "public": true,
+          "created_at": "2018-05-12T04:42:39Z",
+          "updated_at": "2018-05-12T06:56:51Z",
+          "description": "介绍一下这个项目的代码结构, 不定时更新文档",
+          "comments": 0,
+          "user": null,
+          "comments_url": "https://api.github.com/gists/200f79981333b6c3ce0f5bfa57598b46/comments",
+          "owner": {
+            "login": "GitHub-Laziji",
+            "id": 30425217,
+            "node_id": "MDQ6VXNlcjMwNDI1MjE3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/30425217?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/GitHub-Laziji",
+            "html_url": "https://github.com/GitHub-Laziji",
+            "followers_url": "https://api.github.com/users/GitHub-Laziji/followers",
+            "following_url": "https://api.github.com/users/GitHub-Laziji/following{/other_user}",
+            "gists_url": "https://api.github.com/users/GitHub-Laziji/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/GitHub-Laziji/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/GitHub-Laziji/subscriptions",
+            "organizations_url": "https://api.github.com/users/GitHub-Laziji/orgs",
+            "repos_url": "https://api.github.com/users/GitHub-Laziji/repos",
+            "events_url": "https://api.github.com/users/GitHub-Laziji/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/GitHub-Laziji/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "truncated": false
         }
       ]
     }
@@ -257,7 +485,7 @@ export default {
           data['url'] = this.result[i].files[key]
           data['description'] = this.result[i]['description']
           data['id'] = this.result[i]['id']
-          data['hide'] = false
+          data['hide'] = false;
           this.blogs.push(data)
           break
         }
@@ -265,4 +493,3 @@ export default {
     }
   }
 }
-;

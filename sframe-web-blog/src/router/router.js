@@ -16,6 +16,10 @@ export default new Router({
       children: [
         {
           path: 'list',
+          component: (resolve) => require(['../views/home/list/blog-list.vue'], resolve)
+        },
+        {
+          path: 'content',
           component: (resolve) => require(['../views/home/content/blog-content.vue'], resolve)
         }
       ]

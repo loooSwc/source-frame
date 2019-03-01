@@ -1,0 +1,11 @@
+
+.el-aside {
+  color: #333;
+}
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 180px;
+  min-height: 400px;
+}
+.mavon-editor{
+  width: 800px;
+}

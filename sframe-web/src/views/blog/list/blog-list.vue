@@ -5,7 +5,7 @@
         <el-input type="text" v-model="queryParams.userEmail" placeholder="请输入邮箱搜索" prefix-icon="el-icon-search" @keyup.enter.native="getUserPage()"></el-input>
       </el-form-item>
       <el-form-item style="float: right;">
-        <el-button type="primary"  icon="el-icon-plus" @click="addUser()">新增文章6</el-button>
+        <el-button type="primary"  icon="el-icon-plus" @click="addBlog()">新增文章</el-button>
       </el-form-item>
     </el-form>
     <el-table :data="tableData.result" stripe style="width: 100%">

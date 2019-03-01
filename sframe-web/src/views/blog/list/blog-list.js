@@ -16,8 +16,8 @@ export default {
     editUser: function (item) {
 
     },
-    addUser: function () {
-
+    addBlog: function () {
+      this.$router.push({path:'/home/business/blog/add'})
     },
     changeStatus: function (_status,_user) {
       _user.isEnable = _status;

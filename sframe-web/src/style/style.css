@@ -45,3 +45,6 @@ body{
   min-height:  50rem;
   background-color: #fff;
 }
+.breadcrumb-class{
+  margin-bottom: 20px;
+}

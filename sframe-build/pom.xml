@@ -12,6 +12,7 @@
         <module>../sframe-common</module>
         <module>../sframe-user</module>
         <module>../sframe-user-interface</module>
+        <module>../sframe-blog</module>
     </modules>
     <packaging>pom</packaging>
 

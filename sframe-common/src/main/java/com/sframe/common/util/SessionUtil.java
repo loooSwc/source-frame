@@ -8,7 +8,7 @@ import javax.servlet.http.HttpSession;
 
 
 /**
- * @Author cxy@acmtc.com
+ * @Author c.9u@outlook.com
  * @Description  Session工具
  * @Date 17:17 2018/11/22
  * @Param

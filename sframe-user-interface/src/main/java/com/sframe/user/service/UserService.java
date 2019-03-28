@@ -16,7 +16,7 @@ public interface UserService {
     Page getUserPage(ParamsMap paramsMap) throws Exception;
 
 	/**
-	 * @Author cxy@acmtc.com
+	 * @Author c.9u@outlook.com
 	 * @Description  获取用户详情信息
 	 * @Date 17:26 2018/12/1
 	 * @Param
@@ -25,7 +25,7 @@ public interface UserService {
 	User getUserDetail(String userId) throws Exception;
 
 	/**
-	 * @Author cxy@acmtc.com
+	 * @Author c.9u@outlook.com
 	 * @Description  添加用户
 	 * @Date 14:53 2018/12/6
 	 * @Param
@@ -34,7 +34,7 @@ public interface UserService {
 	void addUser(User user) throws Exception;
 
 	/**
-	 * @Author cxy@acmtc.com
+	 * @Author c.9u@outlook.com
 	 * @Description  校验用户账户是否被占用
 	 * @Date 16:02 2018/12/6
 	 * @Param
@@ -43,7 +43,7 @@ public interface UserService {
 	boolean checkUserAccount(String userAccount) throws Exception;
 
 	/**
-	 * @Author cxy@acmtc.com
+	 * @Author c.9u@outlook.com
 	 * @Description  编辑用户
 	 * @Date 18:13 2018/12/6
 	 * @Param
@@ -52,7 +52,7 @@ public interface UserService {
 	void editUser(User user) throws Exception;
 
 	/**
-	 * @Author cxy@acmtc.com
+	 * @Author c.9u@outlook.com
 	 * @Description  更改状态
 	 * @Date 18:27 2018/12/6
 	 * @Param

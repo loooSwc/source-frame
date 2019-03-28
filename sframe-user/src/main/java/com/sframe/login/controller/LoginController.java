@@ -42,7 +42,7 @@ public class LoginController {
     }
 
     /**
-     * @Author cxy@acmtc.com
+     * @Author c.9u@outlook.com
      * @Description  生成密码加密传输时的key
      * @Date 17:14 2018/11/17
      * @Param

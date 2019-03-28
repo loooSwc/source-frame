@@ -2,7 +2,7 @@
   "name": "sframe-web-blog",
   "version": "1.0.0",
   "description": "blog' sframe",
-  "author": "caoxiangyu <cxy@acmtc.com>",
+  "author": "caoxiangyu <c.9u@outlook.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",

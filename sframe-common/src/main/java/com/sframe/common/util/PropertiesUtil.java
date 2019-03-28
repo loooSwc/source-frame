@@ -9,7 +9,7 @@ import java.util.Properties;
 
 
 /**
- * @Author cxy@acmtc.com
+ * @Author c.9u@outlook.com
  * @Description  读取db.properties配置的属性
  * @Date 17:37 2019/2/26
  * @Param
